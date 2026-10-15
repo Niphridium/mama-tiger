@@ -7,11 +7,11 @@
     <meta name="description" content="План на 12 недель для родителей детей 7–9 лет (1–3 класс) под программу РК: распорядок дня, замеры, чек-лист, секции Алматы и олимпиады. Сон, движение и отдых — в приоритете." />
     <meta name="ai-disclosure" content="Материалы подготовлены с помощью ИИ." />
     <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#f6f3ee" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#13151c" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f4f6f3" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#111613" media="(prefers-color-scheme: dark)" />
     <link
       rel="icon"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23e8590c'/%3E%3Cpath d='M9 12 L15 20 L9 28 M20 9 L20 31 M31 12 L25 20 L31 28' fill='none' stroke='%231b1d26' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%232f6b4f'/%3E%3Cpath d='M10.4 27 L14.6 13 M16.7 31 L23.3 9 M25.4 27 L29.6 13' fill='none' stroke='%23ffffff' stroke-width='3.6' stroke-linecap='round'/%3E%3C/svg%3E"
     />
     <script>
       // Тема до первой отрисовки: выбор родителя из localStorage (если доступен), иначе — системная.
@@ -21,20 +21,20 @@
           document.documentElement.setAttribute('data-theme', saved.theme);
           // строка браузера — в цвет выбранной темы (= --paper; те же значения — в Layout.tsx)
           var metas = document.querySelectorAll('meta[name="theme-color"]');
-          for (var i = 0; i < metas.length; i++) metas[i].setAttribute('content', saved.theme === 'dark' ? '#13151c' : '#f6f3ee');
+          for (var i = 0; i < metas.length; i++) metas[i].setAttribute('content', saved.theme === 'dark' ? '#111613' : '#f4f6f3');
         }
         if (saved && (saved.age === 7 || saved.age === 8 || saved.age === 9)) document.documentElement.setAttribute('data-age', String(saved.age));
       } catch (e) {}
     </script>
     <style>
-      :root { --paper: #f6f3ee; --ink: #1b1d26; }
-      @media (prefers-color-scheme: dark) { :root:not([data-theme='light']) { --paper: #13151c; --ink: #f2f0eb; color-scheme: dark; } }
-      :root[data-theme='dark'] { --paper: #13151c; --ink: #f2f0eb; color-scheme: dark; }
+      :root { --paper: #f4f6f3; --ink: #18231d; }
+      @media (prefers-color-scheme: dark) { :root:not([data-theme='light']) { --paper: #111613; --ink: #e7eee9; color-scheme: dark; } }
+      :root[data-theme='dark'] { --paper: #111613; --ink: #e7eee9; color-scheme: dark; }
       html, body { min-height: 100%; }
       body { margin: 0; background: var(--paper); color: var(--ink); }
     </style>
-    <script type="module" crossorigin src="./assets/index-EfbQjjHY.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/style-DVi69ZL5.css">
+    <script type="module" crossorigin src="./assets/index-E-yA6QYk.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/style-mb5oCZTO.css">
   </head>
   <body>
     <div id="root"></div>
