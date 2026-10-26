@@ -2,13 +2,13 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <title>Мама-тигр 7–9 — план на 12 недель</title>
+    <title>Mama Tiger — развитие детей в семье</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="description" content="План на 12 недель для родителей детей 7–9 лет (1–3 класс) под программу РК: распорядок дня, замеры, чек-лист, секции Алматы и олимпиады. Сон, движение и отдых — в приоритете." />
+    <meta name="description" content="Приложение для родителей детей 4–18 лет: практика дня по возрасту (чтение, счёт, логика, английский, жизненные навыки), цели и дела по каждому ребёнку, пересмотр раз в несколько недель, время и бюджет семьи. Данные остаются в браузере на этом устройстве." />
     <meta name="ai-disclosure" content="Материалы подготовлены с помощью ИИ." />
     <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#F6F2EE" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0B0B0D" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#F5F5F7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0E1014" media="(prefers-color-scheme: dark)" />
     <link
       rel="icon"
       type="image/svg+xml"
@@ -16,28 +16,31 @@
     />
     <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
     <script>
-      // Тема до первой отрисовки: выбор родителя из localStorage (если доступен), иначе — системная.
+      // Тема до первой отрисовки: выбор родителя (mama-tiger:prefs; прежде — тема в mama-tiger:v1), по умолчанию — светлая.
       try {
-        var saved = JSON.parse(localStorage.getItem('mama-tiger:v1') || 'null');
-        if (saved && (saved.theme === 'light' || saved.theme === 'dark')) {
-          document.documentElement.setAttribute('data-theme', saved.theme);
+        var prefs = JSON.parse(localStorage.getItem('mama-tiger:prefs') || 'null');
+        var legacy = JSON.parse(localStorage.getItem('mama-tiger:v1') || 'null');
+        var theme = prefs && (prefs.theme === 'light' || prefs.theme === 'dark' || prefs.theme === 'system') ? prefs.theme : legacy && legacy.theme === 'dark' ? 'dark' : 'light';
+        if (theme !== 'system') {
+          document.documentElement.setAttribute('data-theme', theme);
           // строка браузера — в цвет выбранной темы (= --bg; те же значения — в Layout.tsx)
           var metas = document.querySelectorAll('meta[name="theme-color"]');
-          for (var i = 0; i < metas.length; i++) metas[i].setAttribute('content', saved.theme === 'dark' ? '#0B0B0D' : '#F6F2EE');
+          for (var i = 0; i < metas.length; i++) metas[i].setAttribute('content', theme === 'dark' ? '#0E1014' : '#F5F5F7');
         }
-        if (saved && (saved.age === 7 || saved.age === 8 || saved.age === 9)) document.documentElement.setAttribute('data-age', String(saved.age));
-      } catch (e) {}
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
     </script>
     <style>
       /* фон и текст до загрузки CSS — те же, что --bg и --ink в src/index.css */
-      :root { --bg: #F6F2EE; --ink: #15161A; }
-      @media (prefers-color-scheme: dark) { :root:not([data-theme='light']) { --bg: #0B0B0D; --ink: #F5F5F7; color-scheme: dark; } }
-      :root[data-theme='dark'] { --bg: #0B0B0D; --ink: #F5F5F7; color-scheme: dark; }
+      :root { --bg: #F5F5F7; --ink: #16161C; }
+      @media (prefers-color-scheme: dark) { :root:not([data-theme='light']) { --bg: #0E1014; --ink: #F1F3F7; color-scheme: dark; } }
+      :root[data-theme='dark'] { --bg: #0E1014; --ink: #F1F3F7; color-scheme: dark; }
       html { min-height: 100%; background: var(--bg); color: var(--ink); }
       body { margin: 0; min-height: 100%; }
     </style>
-    <script type="module" crossorigin src="./assets/index-D-mzXIyk.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/style-DLHi2AKU.css">
+    <script type="module" crossorigin src="./assets/index-5xrz1uWZ.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/style-Bl46iQUQ.css">
   </head>
   <body>
     <div id="root"></div>
